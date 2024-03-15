@@ -66,11 +66,11 @@
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[3.141.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[3.141.0, )"
             },
             "coverlet.collector": {
               "target": "Package",

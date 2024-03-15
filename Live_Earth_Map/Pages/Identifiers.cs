@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AventStack.ExtentReports;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
 namespace Live_Earth_Map.Pages
@@ -6,22 +7,35 @@ namespace Live_Earth_Map.Pages
     public class Identifiers
     {
         private AppiumDriver<IWebElement> driver;
+        private ExtentTest Test;
+        ExtentReports Extent = new ExtentReports();
         //Constructor
-        public Identifiers(AppiumDriver<IWebElement> driver)
+        public Identifiers(AppiumDriver<IWebElement> driver, ExtentTest test)
         {
             this.driver = driver;
+            this.Test = test;
         }
 
 
         //Methods
-        public void Method1()
+        public void FamousPlaces()
         {
-            FamousPlaces.Click();
+            ExtentTest test = Extent.CreateTest("Famous Places Report 1");
+
+            try
+            {
+                FamousPlace.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
         }
 
         //Identifiers
         //Famous Places
-        IWebElement FamousPlaces => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_places_bt");
+        public IWebElement FamousPlace => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_places_bt");
         IWebElement Acropolos => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
         IWebElement BigBen => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
         IWebElement BurjKhalifa => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");

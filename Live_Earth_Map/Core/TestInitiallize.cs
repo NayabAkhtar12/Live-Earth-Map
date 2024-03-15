@@ -10,15 +10,17 @@ namespace Live_Earth_Map.Core
     public class TestInitiallize
     {
         public AndroidDriver<IWebElement> driver;
-        //  public ExtentReports Extent;
+        public ExtentReports Extent;
 
 
         public TestInitiallize()
         {
-            var ExtentSparkReports = new ExtentSparkReporter("");
-            var Extent = new ExtentReports();
+            var ExtentSparkReports = new ExtentSparkReporter("D:\\");
+            Extent = new ExtentReports();
             Extent.AttachReporter(ExtentSparkReports);
         }
+
+        [TestInitialize]
         public void Setup()
         {
             try
@@ -26,11 +28,11 @@ namespace Live_Earth_Map.Core
                 AppiumOptions cap = new AppiumOptions();
                 cap.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
                 cap.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Galaxy s7");
-                cap.AddAdditionalCapability(MobileCapabilityType.Udid, "");
+                cap.AddAdditionalCapability(MobileCapabilityType.Udid, "e7c7d60c");
                 cap.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "8.0");
                 cap.AddAdditionalCapability("appium:automationName", AutomationName.AndroidUIAutomator2);
-                driver = new AndroidDriver<IWebElement>(new Uri(""), cap, TimeSpan.FromSeconds(5));
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                driver = new AndroidDriver<IWebElement>(new Uri("http://192.168.100.5:4723/"), cap, TimeSpan.FromSeconds(180));
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             }
             catch (Exception e)
@@ -47,8 +49,8 @@ namespace Live_Earth_Map.Core
             {
                 if (driver != null)
                 {
+                    driver.CloseApp();
                     driver.Quit();
-                    driver.Close();
                 }
             }
             catch (Exception e)
@@ -56,6 +58,7 @@ namespace Live_Earth_Map.Core
                 Console.WriteLine($"Failed to initialize driver: {e.Message}");
                 throw;
             }
+            Extent.Flush();
 
         }
     }

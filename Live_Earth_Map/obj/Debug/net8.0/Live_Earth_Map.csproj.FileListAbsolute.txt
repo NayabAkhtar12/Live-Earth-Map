@@ -148,6 +148,7 @@ D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth
 D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth_Map.AssemblyInfoInputs.cache
 D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth_Map.AssemblyInfo.cs
 D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth_Map.csproj.CoreCompileInputs.cache
+D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth_Map.sourcelink.json
 D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth_Map.csproj.CopyComplete
 D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\Live_Earth_Map.dll
 D:\Automation-Projects\Live_Earth_Map\Live_Earth_Map\obj\Debug\net8.0\refint\Live_Earth_Map.dll
