@@ -31,6 +31,264 @@ namespace Live_Earth_Map.Pages
                 Console.WriteLine("Exception occurred: " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
+            try
+            {
+                BigBen.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+
+            try
+            {
+                BurjKhalifa.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+
+            try
+            {
+                BraindenBurg.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+
+            try
+            {
+                Kinderdijik.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+
+            try
+            {
+                Kaabah.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                Mountfuji.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                NatreDameDe.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                RomanForum.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                SaintBasils.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                StatueOf.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                Stonehenge.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                Colosseum.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                MachuPicchu.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                TowerBridge.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                SydneyOpera.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                TajMehel.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+        }
+        public void SevenWondrs()
+        {
+            try
+            {
+                Petra.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                GreatWall.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                TajMahal.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                TheColloseum.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                TheMachu.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                ChichenItza.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
+                Christtheredeemer.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+        }
+        public void USAPanorama()
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+        }
+        public void Germany()
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+        }
+        public void Pakistani()
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+        }
+        public void France()
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
         }
 
         //Identifiers
@@ -60,13 +318,39 @@ namespace Live_Earth_Map.Pages
 
         //Seven Wonders
         IWebElement SevenWonders => driver.FindElementById("");
-        //Seven Wonders
-        IWebElement USAPanorama => driver.FindElementById("");
-        IWebElement GermanyPanorama => driver.FindElementById("");
-        IWebElement PakistaniPanorama => driver.FindElementById("");
-        IWebElement FrancePanorama => driver.FindElementById("");
-        IWebElement UKPanorama => driver.FindElementById("");
-        IWebElement ItalyPanorama => driver.FindElementById("");
+        IWebElement Petra => driver.FindElementById("");
+        IWebElement GreatWall => driver.FindElementById("");
+        IWebElement TajMahal => driver.FindElementById("");
+        IWebElement TheColloseum => driver.FindElementById("");
+        IWebElement TheMachu => driver.FindElementById("");
+        IWebElement ChichenItza => driver.FindElementById("");
+        IWebElement Christtheredeemer => driver.FindElementById("");
+
+        IWebElement USAPanoramaMenu => driver.FindElementById("");
+        //-------------------------------------------------------
+        IWebElement NationalPark => driver.FindElementById("");
+
+        IWebElement Antelope => driver.FindElementById("");
+        IWebElement BellagioHotel => driver.FindElementById("");
+        IWebElement DisneyKingdom => driver.FindElementById("");
+        IWebElement DisneyWorld => driver.FindElementById("");
+        IWebElement FloridaKeys => driver.FindElementById("");
+        IWebElement GoldenGateBridge => driver.FindElementById("");
+        IWebElement GrandCanyon => driver.FindElementById("");
+        IWebElement GroundTetonPark => driver.FindElementById("");
+        IWebElement LakeTahoe => driver.FindElementById("");
+        IWebElement MagicKingdomPark => driver.FindElementById("");
+        IWebElement MonumentValley => driver.FindElementById("");
+        IWebElement Maui => driver.FindElementById("");
+        IWebElement RedwoodNationaland => driver.FindElementById("");
+        IWebElement SouthBeachFlorida => driver.FindElementById("");
+
+        //-------------------------------------------------------
+        IWebElement GermanyPanoramaMenu => driver.FindElementById("");
+        IWebElement PakistaniPanoramaMenu => driver.FindElementById("");
+        IWebElement FrancePanoramaMenu => driver.FindElementById("");
+        IWebElement UKPanoramaMenu => driver.FindElementById("");
+        IWebElement ItalyPanoramaMenu => driver.FindElementById("");
 
 
 
