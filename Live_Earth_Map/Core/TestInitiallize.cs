@@ -31,7 +31,7 @@ namespace Live_Earth_Map.Core
                 cap.AddAdditionalCapability(MobileCapabilityType.Udid, "e7c7d60c");
                 cap.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "8.0");
                 cap.AddAdditionalCapability("appium:automationName", AutomationName.AndroidUIAutomator2);
-                driver = new AndroidDriver<IWebElement>(new Uri("http://192.168.100.5:4723/"), cap, TimeSpan.FromSeconds(180));
+                driver = new AndroidDriver<IWebElement>(new Uri("   http://192.168.100.5:4723/"), cap, TimeSpan.FromSeconds(180));
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             }
