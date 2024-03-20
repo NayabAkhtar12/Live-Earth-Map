@@ -7,13 +7,14 @@ namespace Live_Earth_Map.Test_Class
     [TestClass]
     public class Test_Class : TestInitiallize
     {
-        Identifiers Id;
+        StreetView SV;
         [TestMethod]
         public void StreetView()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
-            Id = new Identifiers(driver, test);
-            Id.FamousPlaces();
+            SV = new StreetView(driver, test);
+            SV.FamousPlaces();
+            SV.SevenWondrs();
         }
     }
 }

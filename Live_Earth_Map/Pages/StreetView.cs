@@ -4,13 +4,13 @@ using OpenQA.Selenium.Appium;
 
 namespace Live_Earth_Map.Pages
 {
-    public class Identifiers
+    public class StreetView
     {
         private AppiumDriver<IWebElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         //Constructor
-        public Identifiers(AppiumDriver<IWebElement> driver, ExtentTest test)
+        public StreetView(AppiumDriver<IWebElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
@@ -35,7 +35,6 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Acropolos.Click();
-                Back.Click();
             }
             catch (Exception ex)
             {
@@ -243,6 +242,7 @@ namespace Live_Earth_Map.Pages
             {
                 TajMehel.Click();
                 Back.Click();
+                FamousPlacesBack.Click();
             }
             catch (Exception ex)
             {
@@ -254,8 +254,16 @@ namespace Live_Earth_Map.Pages
         {
             try
             {
+                SevenWonders.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            }
+            try
+            {
                 Petra.Click();
-                Back.Click();
             }
             catch (Exception ex)
             {
@@ -310,6 +318,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Christtheredeemer.Click();
+                BackSevenWonders.Click();
             }
             catch (Exception ex)
             {
@@ -448,6 +457,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SouthBeachFlorida.Click();
+                USABack.Click();
             }
             catch (Exception ex)
             {
@@ -586,6 +596,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SouthBeachFlorida.Click();
+                GermanyBackButton.Click();
             }
             catch (Exception ex)
             {
@@ -768,6 +779,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 WhitePalace.Click();
+                PakistanBackButton.Click();
             }
             catch (Exception ex)
             {
@@ -910,6 +922,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 PrehistoricCavePaintings.Click();
+                FranceBackButton.Click();
             }
             catch (Exception ex)
             {
@@ -1052,6 +1065,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Belfast.Click();
+                UKBackButton.Click();
             }
             catch (Exception ex)
             {
@@ -1234,6 +1248,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Capri.Click();
+                ItalyBackButton.Click();
             }
             catch (Exception ex)
             {
@@ -1245,148 +1260,158 @@ namespace Live_Earth_Map.Pages
 
         //Identifiers
         //Famous Places
+        public IWebElement SevenWondersBack => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
+
+        public IWebElement FamousPlacesBack => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
         public IWebElement Back => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_places_bt");
 
         public IWebElement FamousPlace => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_places_bt");
-        IWebElement Acropolos => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
+        IWebElement Acropolos => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Acropolos of Athens\"]");
         IWebElement BigBen => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
         IWebElement BurjKhalifa => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
         IWebElement BraindenBurg => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
-        IWebElement Georges => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
-        IWebElement EiffelTower => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
-        IWebElement LondonEye => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
-        IWebElement Kinderdijik => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
-        IWebElement Louvire => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
-        IWebElement Kaabah => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
-        IWebElement Mountfuji => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
-        IWebElement NatreDameDe => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
-        IWebElement RomanForum => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
-        IWebElement SaintBasils => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
-        IWebElement StatueOf => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
-        IWebElement Stonehenge => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
-        IWebElement Colosseum => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
-        IWebElement MachuPicchu => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
-        IWebElement TowerBridge => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[10]");
-        IWebElement SydneyOpera => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[11]");
-        IWebElement TajMehel => driver.FindElementById("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[12]");
+        IWebElement Georges => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
+        IWebElement EiffelTower => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
+        IWebElement LondonEye => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
+        IWebElement Kinderdijik => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
+        IWebElement Louvire => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
+        IWebElement Kaabah => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
+        IWebElement Mountfuji => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
+        IWebElement NatreDameDe => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement RomanForum => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement SaintBasils => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
+        IWebElement StatueOf => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
+        IWebElement Stonehenge => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
+        IWebElement Colosseum => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
+        IWebElement MachuPicchu => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
+        IWebElement TowerBridge => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[10]");
+        IWebElement SydneyOpera => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[11]");
+        IWebElement TajMehel => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[12]");
 
         //Seven Wonders
-        IWebElement SevenWonders => driver.FindElementById("");
-        IWebElement Petra => driver.FindElementById("");
-        IWebElement GreatWall => driver.FindElementById("");
-        IWebElement TajMahal => driver.FindElementById("");
-        IWebElement TheColloseum => driver.FindElementById("");
-        IWebElement TheMachu => driver.FindElementById("");
-        IWebElement ChichenItza => driver.FindElementById("");
-        IWebElement Christtheredeemer => driver.FindElementById("");
+        IWebElement SevenWonders => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/seven_wonders_bt");
+        IWebElement BackSevenWonders => driver.FindElementByXPath("//android.widget.LinearLayout[@resource-id=\"com.google.android.apps.maps:id/compass_container\"]/android.widget.LinearLayout");
 
-        IWebElement USAPanoramaMenu => driver.FindElementById("");
-        //-------------------------------------------------------
-        IWebElement NationalPark => driver.FindElementById("");
+        IWebElement Petra => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
+        IWebElement GreatWall => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
+        IWebElement TajMahal => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement TheColloseum => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement TheMachu => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement ChichenItza => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement Christtheredeemer => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
 
-        IWebElement Antelope => driver.FindElementById("");
-        IWebElement BellagioHotel => driver.FindElementById("");
-        IWebElement DisneyKingdom => driver.FindElementById("");
-        IWebElement DisneyWorld => driver.FindElementById("");
-        IWebElement FloridaKeys => driver.FindElementById("");
-        IWebElement GoldenGateBridge => driver.FindElementById("");
-        IWebElement GrandCanyon => driver.FindElementById("");
-        IWebElement GrandTetonPark => driver.FindElementById("");
-        IWebElement LakeTahoe => driver.FindElementById("");
-        IWebElement MagicKingdomPark => driver.FindElementById("");
-        IWebElement MonumentValley => driver.FindElementById("");
-        IWebElement Maui => driver.FindElementById("");
-        IWebElement RedwoodNationaland => driver.FindElementById("");
-        IWebElement SouthBeachFlorida => driver.FindElementById("");
+        IWebElement USAPanoramaMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/us_panorama_bt");
+        //-------------------------------------------------------
+        public IWebElement USABack => driver.FindElementById("");
+
+        IWebElement NationalPark => driver.FindElementByXPath("(//android.view.ViewGroup[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/parentCl\"])[1]");
+
+        IWebElement Antelope => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
+        IWebElement BellagioHotel => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement DisneyKingdom => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement DisneyWorld => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
+        IWebElement FloridaKeys => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
+        IWebElement GoldenGateBridge => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
+        IWebElement GrandCanyon => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
+        IWebElement GrandTetonPark => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
+        IWebElement LakeTahoe => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement MagicKingdomPark => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
+        IWebElement MonumentValley => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
+        IWebElement Maui => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
+        IWebElement RedwoodNationaland => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
+        IWebElement SouthBeachFlorida => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
 
         //-------------------------------------------------------
-        IWebElement GermanyPanoramaMenu => driver.FindElementById("");
+        IWebElement GermanyPanoramaMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/german_pan_bt");
         //-------------------------------------------------------
+        public IWebElement GermanyBackButton => driver.FindElementById("");
+
         //Same As USA Panorama
         //-------------------------------------------------------
+        public IWebElement PakistanBackButton => driver.FindElementById("");
 
-        IWebElement PakistaniPanoramaMenu => driver.FindElementById("");
+        IWebElement PakistaniPanoramaMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/pak_pan_bt");
         //-------------------------------------------------------
-        IWebElement AttabadLake => driver.FindElementById("");
-        IWebElement FaisalMasjid => driver.FindElementById("");
-        IWebElement MazareQaid => driver.FindElementById("");
-        IWebElement BadshahiMosque => driver.FindElementById("");
-        IWebElement MahodandLake => driver.FindElementById("");
-        IWebElement MinarePakistan => driver.FindElementById("");
-        IWebElement MargallaHills => driver.FindElementById("");
-        IWebElement MoenjoDaro => driver.FindElementById("");
-        IWebElement LakeSaifulMalook => driver.FindElementById("");
-        IWebElement SheeshMehal => driver.FindElementById("");
-        IWebElement PassuCones => driver.FindElementById("");
-        IWebElement SiriPaemedows => driver.FindElementById("");
-        IWebElement UshuForest => driver.FindElementById("");
-        IWebElement KumratValley => driver.FindElementById("");
-        IWebElement Lulusarlake => driver.FindElementById("");
-        IWebElement KundMalirBeach => driver.FindElementById("");
-        IWebElement WhitePalace => driver.FindElementById("");
-
+        IWebElement AttabadLake => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
+        IWebElement FaisalMasjid => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
+        IWebElement MazareQaid => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement BadshahiMosque => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement MahodandLake => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
+        IWebElement MinarePakistan => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
+        IWebElement MargallaHills => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
+        IWebElement MoenjoDaro => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
+        IWebElement LakeSaifulMalook => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[9]");
+        IWebElement SheeshMehal => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
+        IWebElement PassuCones => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
+        IWebElement SiriPaemedows => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement UshuForest => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement KumratValley => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[5]");
+        IWebElement Lulusarlake => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[6]");
+        IWebElement KundMalirBeach => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[7]");
+        IWebElement WhitePalace => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[8]");
 
         //-------------------------------------------------------
-
-        IWebElement FrancePanoramaMenu => driver.FindElementById("");
+        IWebElement FrancePanoramaMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView11");
         //-------------------------------------------------------
+        public IWebElement FranceBackButton => driver.FindElementById("");
 
-        IWebElement FranceEifferTower => driver.FindElementById("");
-        IWebElement FrancLouvire => driver.FindElementById("");
-        IWebElement FrancPalaceofVersalies => driver.FindElementById("");
-        IWebElement FrenchRiveria => driver.FindElementById("");
-        IWebElement MantSaint_Michel => driver.FindElementById("");
-
-        IWebElement LoireValleyChateu => driver.FindElementById("");
-
-        IWebElement Villandry => driver.FindElementById("");
-        IWebElement FrancNatreDame => driver.FindElementById("");
-        IWebElement Mont_Blanc => driver.FindElementById("");
-        IWebElement Carcassonne => driver.FindElementById("");
-        IWebElement Brittany => driver.FindElementById("");
-        IWebElement Rocamadour => driver.FindElementById("");
-        IWebElement PrehistoricCavePaintings => driver.FindElementById("");
+        IWebElement FranceEifferTower => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[1]");
+        IWebElement FrancLouvire => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[2]");
+        IWebElement FrancPalaceofVersalies => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[3]");
+        IWebElement FrenchRiveria => driver.FindElementByXPath("(//android.view.View[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/view3\"])[4]");
+        IWebElement MantSaint_Michel => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Mont Saint-Michel\"]");
+        IWebElement LoireValleyChateu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Loire Valley Châteaux\"]");
+        IWebElement Villandry => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Château de Villandry\"]");
+        IWebElement FrancNatreDame => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Notre Dame\"]");
+        IWebElement Mont_Blanc => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Chamonix-Mont-Blanc\"]");
+        IWebElement Carcassonne => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Carcassonne\"]");
+        IWebElement Brittany => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Brittany\"]");
+        IWebElement Rocamadour => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Rocamadour\"]");
+        IWebElement PrehistoricCavePaintings => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Prehistoric Cave Paintings in Lascaux\"]");
 
         //-------------------------------------------------------
 
-        IWebElement UKPanoramaMenu => driver.FindElementById("");
+        IWebElement UKPanoramaMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView12");
         //-------------------------------------------------------
-        IWebElement London => driver.FindElementById("");
-        IWebElement EdinBurgh => driver.FindElementById("");
-        IWebElement RomanBaths => driver.FindElementById("");
-        IWebElement StoneheigeUK => driver.FindElementById("");
-        IWebElement WindsorCastle => driver.FindElementById("");
-        IWebElement Cotswolds => driver.FindElementById("");
-        IWebElement LakeDistrictNPark => driver.FindElementById("");
-        IWebElement York => driver.FindElementById("");
-        IWebElement Canterbury => driver.FindElementById("");
-        IWebElement LochNess => driver.FindElementById("");
-        IWebElement GiantsCauseway => driver.FindElementById("");
-        IWebElement ChannelIslandsUK => driver.FindElementById("");
-        IWebElement Belfast => driver.FindElementById("");
+        public IWebElement UKBackButton => driver.FindElementById("");
+
+        IWebElement London => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"London\"]");
+        IWebElement EdinBurgh => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Edinburgh\"]");
+        IWebElement RomanBaths => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"The Roman Baths\"]");
+        IWebElement StoneheigeUK => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Stonehenge\"]");
+        IWebElement WindsorCastle => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Windsor Castle\"]");
+        IWebElement Cotswolds => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Cotswolds\"]");
+        IWebElement LakeDistrictNPark => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Lake District National Park\"]");
+        IWebElement York => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"York\"]");
+        IWebElement Canterbury => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Canterbury\"]");
+        IWebElement LochNess => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Loch Ness\"]");
+        IWebElement GiantsCauseway => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Giant's Causeway\"]");
+        IWebElement ChannelIslandsUK => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Channel Islands\"]");
+        IWebElement Belfast => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Belfast\"]");
 
         //-------------------------------------------------------
 
-        IWebElement ItalyPanoramaMenu => driver.FindElementById("");
+        IWebElement ItalyPanoramaMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/italy_pan_bt");
         //-------------------------------------------------------//
-        IWebElement FlorenceItaly => driver.FindElementById("");
-        IWebElement CanalVenice => driver.FindElementById("");
-        IWebElement LeaningTowerofPiso => driver.FindElementById("");
-        IWebElement VacationCity => driver.FindElementById("");
-        IWebElement UffiziGallery => driver.FindElementById("");
-        IWebElement ClinqueTerre => driver.FindElementById("");
-        IWebElement LakeComoItaly => driver.FindElementById("");
-        IWebElement Pantheon => driver.FindElementById("");
+        public IWebElement ItalyBackButton => driver.FindElementById("");
 
-        IWebElement VeronaArena => driver.FindElementById("");
-        IWebElement TreviFountain => driver.FindElementById("");
-        IWebElement AmalfiCoast => driver.FindElementById("");
-        IWebElement PompeiiMount => driver.FindElementById("");
-        IWebElement ItalyRomanForum => driver.FindElementById("");
-        IWebElement DuomodiMilano => driver.FindElementById("");
-        IWebElement ItalyValleyofTemple => driver.FindElementById("");
-        IWebElement RialtoBridge => driver.FindElementById("");
-        IWebElement Capri => driver.FindElementById("");
+        IWebElement FlorenceItaly => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Florence Duomo\"]");
+        IWebElement CanalVenice => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"The Grand Canal Venice\"]");
+        IWebElement LeaningTowerofPiso => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Leaning Tower of Pisa\"]");
+        IWebElement VacationCity => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Vatican City\"]");
+        IWebElement UffiziGallery => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Uffizi Gallery\"]");
+        IWebElement ClinqueTerre => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\" Cinque Terre\"]");
+        IWebElement LakeComoItaly => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Lake Como\"]");
+        IWebElement Pantheon => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Pantheon\"]");
+        IWebElement VeronaArena => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Verona Arena\"]");
+        IWebElement TreviFountain => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Trevi Fountain\"]");
+        IWebElement AmalfiCoast => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Amalfi Coast\"]");
+        IWebElement PompeiiMount => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Pompeii and Mount Vesuvius\"]");
+        IWebElement ItalyRomanForum => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Roman Forum\"]");
+        IWebElement DuomodiMilano => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Duomo di Milano\"]");
+        IWebElement ItalyValleyofTemple => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"The Valley of Temples in Agrigento\"]");
+        IWebElement RialtoBridge => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Rialto Bridge\"]");
+        IWebElement Capri => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Capri\"]");
 
         //-------------------------------------------------------//
 
