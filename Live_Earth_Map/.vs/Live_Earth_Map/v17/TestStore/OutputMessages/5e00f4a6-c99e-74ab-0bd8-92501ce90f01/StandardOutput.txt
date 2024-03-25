@@ -1,0 +1,27 @@
+Exception occurred while clicking Masjid: The element 'By.xpath: //android.widget.Button[@content-desc="Back"]/android.widget.ImageView' is not linked to the same object in DOM anymore
+Exception occurred while clicking Hospital: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Dentist: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Doctor: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Ambulance: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking FireStation: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking RescueCenter: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking GasStation: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking PetrolPump: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Automechanic: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Hotel: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Cafe: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking Bakery: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking ShoppingMall: An element could not be located on the page using the given search parameters.
+Exception occurred while clicking JewelryShop: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Shoestore: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking BeautySalon: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Cinema: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking School: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking College: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking University: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking PetStore: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Pharmacy: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Medical: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Museum: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Park: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Exception occurred while clicking Zoo: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up

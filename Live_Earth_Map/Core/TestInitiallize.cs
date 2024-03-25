@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using AventStack.ExtentReports.Reporter;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -15,9 +14,9 @@ namespace Live_Earth_Map.Core
 
         public TestInitiallize()
         {
-            var ExtentSparkReports = new ExtentSparkReporter("D:\\");
+            //    var ExtentSparkReports = new ExtentSparkReporter("D:\\");
             Extent = new ExtentReports();
-            Extent.AttachReporter(ExtentSparkReports);
+            // Extent.AttachReporter(ExtentSparkReports);
         }
 
         [TestInitialize]
