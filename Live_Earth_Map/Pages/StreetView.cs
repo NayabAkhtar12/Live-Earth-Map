@@ -35,6 +35,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Acropolos.Click();
+                driver.Navigate().Back();
             }
             catch (Exception ex)
             {

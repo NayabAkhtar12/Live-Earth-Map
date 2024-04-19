@@ -384,7 +384,7 @@ namespace Live_Earth_Map.Pages
             }
         }
         public IWebElement Airport => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Airport\"]");
-        public IWebElement BackButton => driver.FindElementByXPath("//android.widget.Button[@content-desc=\"Back\"]/android.widget.ImageView");
+        public IWebElement BackButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
         [Obsolete]
         private void Back()
         {

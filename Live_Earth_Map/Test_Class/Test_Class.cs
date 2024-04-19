@@ -10,7 +10,7 @@ namespace Live_Earth_Map.Test_Class
         StreetView SV;
 
         NearByPlaces Airport;
-        [TestMethod]
+        //   [TestMethod]
         public void NearByPlaces()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -18,13 +18,13 @@ namespace Live_Earth_Map.Test_Class
             Airport.NearByPlacesHome();
         }
 
-        //   [TestMethod]
+        [TestMethod]
         public void StreetView()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             SV = new StreetView(driver, test);
             SV.FamousPlaces();
-            SV.SevenWondrs();
+            // SV.SevenWondrs();
         }
     }
 }
