@@ -35,7 +35,15 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Acropolos.Click();
+                Thread.Sleep(4000);
+                //   WaitForElementToBeVisible(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton"), 10);
+
+                MapBack.Click();
+                Thread.Sleep(5000);
+                driver.Navigate().Refresh();
                 driver.Navigate().Back();
+                Thread.Sleep(5000);
+
             }
             catch (Exception ex)
             {
@@ -46,7 +54,8 @@ namespace Live_Earth_Map.Pages
             try
             {
                 BigBen.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
 
             }
             catch (Exception ex)
@@ -58,7 +67,8 @@ namespace Live_Earth_Map.Pages
             try
             {
                 BurjKhalifa.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
 
             }
             catch (Exception ex)
@@ -70,7 +80,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 BraindenBurg.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -80,7 +92,8 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Georges.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
 
             }
             catch (Exception ex)
@@ -91,7 +104,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 EiffelTower.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -101,7 +116,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 LondonEye.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -111,7 +128,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Kinderdijik.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -121,7 +140,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Louvire.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -132,7 +153,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Kaabah.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -142,7 +165,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Mountfuji.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -152,7 +177,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 NatreDameDe.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -162,7 +189,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 RomanForum.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -172,7 +201,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SaintBasils.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -182,7 +213,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 StatueOf.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -192,7 +225,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Stonehenge.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -202,7 +237,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 Colosseum.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -212,7 +249,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 MachuPicchu.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -222,7 +261,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 TowerBridge.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -232,7 +273,9 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SydneyOpera.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+
             }
             catch (Exception ex)
             {
@@ -242,7 +285,8 @@ namespace Live_Earth_Map.Pages
             try
             {
                 TajMehel.Click();
-                Back.Click();
+                driver.Navigate().Back();
+                driver.Navigate().Back();
                 FamousPlacesBack.Click();
             }
             catch (Exception ex)
@@ -1264,7 +1308,8 @@ namespace Live_Earth_Map.Pages
         public IWebElement SevenWondersBack => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
 
         public IWebElement FamousPlacesBack => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
-        public IWebElement Back => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_places_bt");
+        public IWebElement Back => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
+        public IWebElement MapBack => driver.FindElementByXPath("//android.widget.LinearLayout[@resource-id=\"com.google.android.apps.maps:id/compass_container\"]/android.widget.LinearLayout");
 
         public IWebElement FamousPlace => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_places_bt");
         IWebElement Acropolos => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Acropolos of Athens\"]");
