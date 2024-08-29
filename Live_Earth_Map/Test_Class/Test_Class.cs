@@ -17,7 +17,7 @@ namespace Live_Earth_Map.Test_Class
         ParkingSpot ParkingSpot;
         MyLocation Mylocation;
         StreetView SV;
-
+        FamousPlaces Famousplaces;
 
 
         //ui with 1 page that has three sections
@@ -118,6 +118,14 @@ namespace Live_Earth_Map.Test_Class
             SV.FamousPlaces();
             SV.SevenWondrs();
             SV.USAPanorama();
+        }
+
+        [TestMethod]
+        public void FamousPlaces()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            Famousplaces = new FamousPlaces(driver, test);
+            Famousplaces.FamousPlacesMethod();
         }
 
     }
