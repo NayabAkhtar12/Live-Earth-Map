@@ -67,14 +67,15 @@ namespace Live_Earth_Map.Pages
 
                 try
                 {
-                    SearchButton.Click();
+                    FindRouteBtn.Click();
+                    Thread.Sleep(5000);
+
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine($"Error in SearchButton.Click(): {e.Message}");
                 }
 
-                Thread.Sleep(1000);
 
                 try
                 {
@@ -119,6 +120,21 @@ namespace Live_Earth_Map.Pages
                 }
 
                 Thread.Sleep(2000);
+
+                try
+                {
+                    StartNavigation.Click();
+                    Thread.Sleep(4000);
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                    Thread.Sleep(2000);
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error in CurrentLocationButton.Click(): {e.Message}");
+                }
+
 
                 try
                 {
@@ -208,8 +224,8 @@ namespace Live_Earth_Map.Pages
 
                 try
                 {
-                    wait.Until(d => SearchButton.Displayed);  // Wait for SearchButton to be displayed
-                    SearchButton.Click();
+                    wait.Until(d => FindRouteBtn.Displayed);  // Wait for SearchButton to be displayed
+                    FindRouteBtn.Click();
                     Thread.Sleep(3000);
                 }
                 catch (Exception e)
@@ -261,29 +277,47 @@ namespace Live_Earth_Map.Pages
                     Console.WriteLine($"Error in TerrainMap.Click(): {e.Message}");
                 }
 
+                try
+                {
+                    wait.Until(d => StartNavigation.Displayed);  // Wait for TerrainMap to be displayed
+                    StartNavigation.Click();
+                    Thread.Sleep(5000);  // Pause for 2 seconds before moving to the next map view
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                    Thread.Sleep(5000);  // Pause for 2 seconds before moving to the next map view
 
-                try
-                {
-                    wait.Until(d => ClearTextSearch.Displayed);  // Wait for ClearTextSearch to be displayed
-                    ClearTextSearch.Click();
+
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"Error in ClearTextSearch.Click(): {e.Message}");
+                    Console.WriteLine($"StartNavigation.Click(): {e.Message}");
                 }
-                try
-                {
-                    wait.Until(d => CurrentLocationButton.Displayed);  // Wait for CurrentLocationButton to be displayed
-                    CurrentLocationButton.Click();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Error in CurrentLocationButton.Click(): {e.Message}");
-                }
+
+
+                //try
+                //{
+                //    wait.Until(d => ClearTextSearch.Displayed);  // Wait for ClearTextSearch to be displayed
+                //    ClearTextSearch.Click();
+                //}
+                //catch (Exception e)
+                //{
+                //    Console.WriteLine($"Error in ClearTextSearch.Click(): {e.Message}");
+                //}
+                //try
+                //{
+                //    wait.Until(d => CurrentLocationButton.Displayed);  // Wait for CurrentLocationButton to be displayed
+                //    CurrentLocationButton.Click();
+                //}
+                //catch (Exception e)
+                //{
+                //    Console.WriteLine($"Error in CurrentLocationButton.Click(): {e.Message}");
+                //}
 
                 try
                 {
                     driver.Navigate().Back();
+                    driver.Navigate().Back();
+
                 }
                 catch (Exception e)
                 {
@@ -306,7 +340,9 @@ namespace Live_Earth_Map.Pages
         //Elements
         IWebElement RouteMyLoc => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/my_address_bt");
         IWebElement RouteMyDestination => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/destination_search");
+        IWebElement StartNavigation => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search");
 
+        IWebElement FindRouteBtn => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search");
 
         IWebElement RouteFinderMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/routeFinderBtn");
 

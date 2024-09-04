@@ -26,7 +26,6 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SatelliteMapMenu.Click();
-                Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -54,7 +53,6 @@ namespace Live_Earth_Map.Pages
                     Console.WriteLine($"Error in RouteFinderMenu.Click(): {e.Message}");
                 }
 
-                Thread.Sleep(3000);
 
                 try
                 {
@@ -92,7 +90,6 @@ namespace Live_Earth_Map.Pages
             try
             {
                 NearbyPlacesMenu.Click();
-                Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -113,7 +110,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 TrafficMapMenu.Click();
-                Thread.Sleep(3000);
+                // Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -134,7 +131,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 AddressFinderMenu.Click();
-                Thread.Sleep(3000);
+                // Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -155,7 +152,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 ParkingSpotMenu.Click();
-                Thread.Sleep(3000);
+                //     Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -176,7 +173,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 MyLocationMenu.Click();
-                Thread.Sleep(3000);
+                //    Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -218,7 +215,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 StreetViewmenu.Click();
-                Thread.Sleep(3000);
+                //      Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -239,7 +236,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 FamousPlacesMenu.Click();
-                Thread.Sleep(3000);
+                //     Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -260,7 +257,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 MeasureAreamenu.Click();
-                Thread.Sleep(3000);
+                //    Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -280,7 +277,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SolarInfoMenu.Click();
-                Thread.Sleep(3000);
+                //   Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -301,7 +298,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 CurrencyConverterMenu.Click();
-                Thread.Sleep(3000);
+                //       Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -322,7 +319,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 DailyLiveWeatherMenu.Click();
-                Thread.Sleep(3000);
+                //    Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -343,7 +340,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 LanguagetranslatorMenu.Click();
-                Thread.Sleep(3000);
+                //  Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -364,7 +361,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 SpeedoMeterMenu.Click();
-                Thread.Sleep(3000);
+                //   Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -385,7 +382,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 CompassMenu.Click();
-                Thread.Sleep(3000);
+                //   Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
@@ -406,7 +403,7 @@ namespace Live_Earth_Map.Pages
             try
             {
                 CountryInfoMenu.Click();
-                Thread.Sleep(3000);
+                //    Thread.Sleep(3000);
                 if (AdHelper.IsAdPresent())
                 {
                     AdHelper.HandleAd();
