@@ -18,7 +18,8 @@ namespace Live_Earth_Map.Test_Class
         MyLocation Mylocation;
         StreetView SV;
         FamousPlaces Famousplaces;
-
+        CurrencyConverter currencyConverter;
+        LanguageTranslator languageTranslator;
 
         //ui with 1 page that has three sections
         [TestMethod]
@@ -128,5 +129,22 @@ namespace Live_Earth_Map.Test_Class
             Famousplaces.FamousPlacesMethod();
         }
 
+        //Currency cnverter
+        [TestMethod]
+        public void CurrencyConverter()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            currencyConverter = new CurrencyConverter(driver, test);
+            currencyConverter.CurrencyConverterMethod();
+        }
+
+        //Language Translator
+        [TestMethod]
+        public void LanguageTranslator()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            languageTranslator = new LanguageTranslator(driver, test);
+            languageTranslator.LanguageTranslatorMethod();
+        }
     }
 }
