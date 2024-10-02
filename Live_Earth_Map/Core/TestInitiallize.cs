@@ -14,13 +14,6 @@ namespace Live_Earth_Map.Core
         public static ExtentReports Extent;
         private static ExtentSparkReporter _reporter;
 
-        //public TestInitiallize()
-        //{
-        //    string reportPath = @"D:\Reports\LiveEarthMapDdefectReport.html";  
-        //    _reporter = new ExtentSparkReporter(reportPath);
-        //    Extent = new ExtentReports();
-        //    Extent.AttachReporter(_reporter);
-        //}
         //  Static constructor for initializing ExtentReports
         static TestInitiallize()
         {

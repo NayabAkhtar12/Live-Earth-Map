@@ -77,8 +77,8 @@ namespace Live_Earth_Map.Pages
                 string filePath = @$"D:\Reports\screenshot_{timestamp}.png";
 
                 // Save screenshot as a PNG file
-                //  screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
-                //  Console.WriteLine($"Screenshot saved to: {filePath}");
+                screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
+                Console.WriteLine($"Screenshot saved to: {filePath}");
 
                 // Attach the screenshot to the report
                 Test.AddScreenCaptureFromPath(filePath);
