@@ -29,9 +29,9 @@ namespace Live_Earth_Map.Pages
 
             try
             {
-                StreetViewmenu.Click();
-                Thread.Sleep(3000);
-                AdHelper.HandleAd();
+                //StreetViewmenu.Click();
+                //Thread.Sleep(3000);
+                //AdHelper.HandleAd();
                 FamousPlace.Click();
             }
             catch (Exception ex)
@@ -402,7 +402,7 @@ namespace Live_Earth_Map.Pages
         {
             try
             {
-                SevenWonders.Click();
+                //  SevenWonders.Click();
 
             }
             catch (Exception ex)

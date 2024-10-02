@@ -8,112 +8,56 @@ namespace Live_Earth_Map.Pages
     class MyLocation
     {
         private AppiumDriver<AndroidElement> driver;
-        private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        AdHelper AdHelper;
+        ReusableMethods ReusableMethods;
+
         //Constructor
         public MyLocation(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
-            this.Test = test;
-            this.AdHelper = new AdHelper(driver); // Initialize AdHelper with the correct driver type
-        }
+            ReusableMethods = new ReusableMethods(driver, test);
 
+        }
 
         public void MyLocationMethod()
         {
-            ExtentTest test = Extent.CreateTest("Report 1");
-            try
-            {
-                try
-                {
-                    MyLocationMenu.Click();
-                }
-                catch (Exception ex)
-                {
-                    HandleException("MyLocation Scenario 1 - MyLocation.Click", ex);
-                }
+            ReusableMethods.ScrollToElementByText("My Location");
 
+            // Click on the My Location Menu with ad handling
+            ReusableMethods.ClickwithAd(MyLocationMenu, "My Location Menu");
 
-                try
-                {
-                    if (AdHelper.IsAdPresent())
-                    {
-                        AdHelper.HandleAd();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    HandleException("MyLocation  Scenario 1 - AdHelper.HandleAd", ex);
-                }
+            // Wait for 3 seconds to ensure the ad is handled
+            Thread.Sleep(3000);
 
-                Thread.Sleep(3000);
+            // Click on the Map Style Button and wait for 2 seconds
+            ReusableMethods.ElementClick(MapStyleButton, "Map Style Button");
+            Thread.Sleep(2000);
 
-                try
-                {
-                    MapStyleButton.Click();
-                    Thread.Sleep(2000);
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - MapStyleButton.Click", ex);
-                }
+            // Click on the Typical Map View and wait for 2 seconds
+            ReusableMethods.ElementClick(TypicalMapView, "Typical Map View");
+            Thread.Sleep(2000);
 
-                try
-                {
-                    TypicalMapView.Click();
-                    Thread.Sleep(2000);
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - TypicalMapView.Click", ex);
-                }
+            // Click on the Satellite Map View and wait for 2 seconds
+            ReusableMethods.ElementClick(SatelliteMapView, "Satellite Map View");
+            Thread.Sleep(2000);
 
-                try
-                {
-                    SatelliteMapview.Click();
-                    Thread.Sleep(2000);
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - SatelliteMapview.Click", ex);
-                }
-
-                try
-                {
-                    TerrainMap.Click();
-                    Thread.Sleep(2000);
-                    driver.Navigate().Back();
-
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - TerrainMap.Click", ex);
-                }
-            }
-            catch (Exception ex)
-            {
-                HandleException("Satellite Map Scenario", ex);
-            }
+            // Click on the Terrain Map and wait for 2 seconds, then navigate back
+            ReusableMethods.ElementClick(TerrainMap, "Terrain Map");
+            Thread.Sleep(2000);
+            ReusableMethods.NavigateBack("Navigation Back from Terrain Map");
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
 
 
         //Elements
 
-        IWebElement MyLocationMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/myLocationBtn");
-        IWebElement MapStyleButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/fab");
-        IWebElement SatelliteMapview => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_sat");
-
-        IWebElement TerrainMap => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_terrain");
-        IWebElement TypicalMapView => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_typical");
-        public IWebElement BackButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
-        public IWebElement School => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"School\"]");
+        public IWebElement? MyLocationMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/myLocationBtn"), "MyLocationMenu");
+        public IWebElement? MapStyleButton => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/fab"), "MapStyleButton");
+        public IWebElement? SatelliteMapView => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_sat"), "SatelliteMapView");
+        public IWebElement? TerrainMap => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_terrain"), "TerrainMap");
+        public IWebElement? TypicalMapView => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_typical"), "TypicalMapView");
+        public IWebElement? BackButton => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton"), "BackButton");
+        public IWebElement? School => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"School\"]"), "School");
 
     }
 }

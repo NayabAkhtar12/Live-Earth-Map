@@ -2,201 +2,128 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Support.UI;
 
 namespace Live_Earth_Map.Pages
 {
     class TrafficMap
     {
         private AppiumDriver<AndroidElement> driver;
-        private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        AdHelper AdHelper;
+        ReusableMethods ReusableMethods;
+
         //Constructor
         public TrafficMap(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
-            this.Test = test;
-            this.AdHelper = new AdHelper(driver); // Initialize AdHelper with the correct driver type
-        }
+            ReusableMethods = new ReusableMethods(driver, test);
 
+        }
 
         public void TrafficMapMod()
         {
-            ExtentTest test = Extent.CreateTest("Report 1");
-            //try
-            //{
-            //    TrafficMapMenu.Click();
-            //    Thread.Sleep(3000);
-            //    AdHelper.HandleAd();
-            //    Thread.Sleep(3000);
-            //    driver.Navigate().Back();
+            ReusableMethods.ClickwithAd(TrafficMapMenu, "Traffic Map Menu");
 
-            //}
+            // Scenario 1
+            SearchText?.SendKeys("Gulistan Colony Lane 3");
+            ReusableMethods.ElementClick(SearchButton, "Search Button - Scenario 1");
+
+            ReusableMethods.ElementClick(MapStyleButton, "Map Style Button - Scenario 1");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(TypicalMapView, "Typical Map View - Scenario 1");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(SatelliteMapview, "Satellite Map View - Scenario 1");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(TerrainMap, "Terrain Map - Scenario 1");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(MapStyleButton, "Map Style Button - Scenario 2");
+
+            ReusableMethods.ElementClick(ClearTextSearch, "Clear Search Text - Scenario 1");
+
+            // Scenario 2
+            SearchText?.SendKeys("Kahuta");
+            Thread.Sleep(1000);
+
             try
             {
-                try
-                {
-                    TrafficMapMenu.Click();
-                }
-                catch (Exception ex)
-                {
-                    HandleException("TrafficMapMenu Scenario 1 - TrafficMapMenu.Click", ex);
-                }
-
-                //Thread.Sleep(5000);
-
-                try
-                {
-                    if (AdHelper.IsAdPresent())
-                    {
-                        AdHelper.HandleAd();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - AdHelper.HandleAd", ex);
-                }
-
-                Thread.Sleep(3000);
-
-                try
-                {
-                    SearchText.SendKeys("Gulistan Colony Lane 3");
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Traffic  Map Scenario 1 - SearchText.SendKeys", ex);
-                }
-
-                try
-                {
-                    SearchButton.Click();
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - SearchButton.Click", ex);
-                }
-
-                Thread.Sleep(1000);
-
-                try
-                {
-                    MapStyleButton.Click();
-                    Thread.Sleep(2000);
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - MapStyleButton.Click", ex);
-                }
-
-                try
-                {
-                    TypicalMapView.Click();
-                    Thread.Sleep(2000);
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - TypicalMapView.Click", ex);
-                }
-
-                try
-                {
-                    SatelliteMapview.Click();
-                    Thread.Sleep(2000);
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - SatelliteMapview.Click", ex);
-                }
-
-                try
-                {
-                    TerrainMap.Click();
-                    Thread.Sleep(2000);
-                    driver.Navigate().Back();
-
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Satellite Map Scenario 1 - TerrainMap.Click", ex);
-                }
+                ReusableMethods.ElementClick(SearchButton, "Search Button - Scenario 2");
+                Thread.Sleep(2000);
             }
             catch (Exception ex)
             {
-                HandleException("Satellite Map Scenario", ex);
+                ReusableMethods.HandleException("Search Button - Scenario 2", ex);
             }
-        }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
+            ReusableMethods.ElementClick(MapStyleButton, "Map Style Button - Scenario 2");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(TypicalMapView, "Typical Map View - Scenario 2");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(SatelliteMapview, "Satellite Map View - Scenario 2");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(TerrainMap, "Terrain Map - Scenario 2");
+            Thread.Sleep(2000);
+
+            ReusableMethods.ElementClick(ClearTextSearch, "Clear Search Text - Scenario 2");
+
+            ReusableMethods.NavigateBack("Back to Previous Screen");
         }
 
 
         //Elements
-        IWebElement RouteMyLoc => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/my_address_bt");
-        IWebElement RouteMyDestination => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/destination_search");
+        public IWebElement? RouteMyLoc => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/my_address_bt"), "RouteMyLoc");
+        public IWebElement? RouteMyDestination => ReusableMethods.FindElement(By.Id("om.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/destination_search"), "RouteMyDestination");
+        public IWebElement? SatelliteMapMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView"), "SatelliteMapMenu");
+        public IWebElement? RouteFinderMenu => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@text=\"Route Finder\"]"), "RouteFinderMenu");
+        public IWebElement? AddressFinderMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView14"), "AddressFinderMenu");
+        public IWebElement? NearbyPlacesMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView15"), "NearbyPlacesMenu");
+        public IWebElement? TrafficMapMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/trafficMapBtn"), "TrafficMapMenu");
+        public IWebElement? ParkingSpotMenu => ReusableMethods.FindElement(By.Id(""), "ParkingSpotMenu");
+        public IWebElement? MyLocationMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView17"), "MyLocationMenu");
+        public IWebElement? GPSCameraMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView18"), "GPSCameraMenu");
+        public IWebElement? StreetViewmenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView19"), "StreetViewmenu");
+        public IWebElement? FamousPlacesMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView14"), "FamousPlacesMenu");
+        public IWebElement? MeasureAreamenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView25"), "MeasureAreamenu");
+        public IWebElement? SolarInfoMenu => ReusableMethods.FindElement(By.Id(""), "SolarInfoMenu");
+        public IWebElement? CurrencyConverterMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView21"), "CurrencyConverterMenu");
+        public IWebElement? DailyLiveWeatherMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView22"), "DailyLiveWeatherMenu");
+        public IWebElement? LanguagetranslatorMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView20"), "LanguagetranslatorMenu");
+        public IWebElement? CompassMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView24"), "CompassMenu");
+        public IWebElement? SpeedoMeterMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView23"), "SpeedoMeterMenu");
+        public IWebElement? CountryInfoMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView26"), "CountryInfoMenu");
+        public IWebElement? Premium => ReusableMethods.FindElement(By.Id(""), "Premium");
+        public IWebElement? Menu => ReusableMethods.FindElement(By.Id(""), "Menu");
+        public IWebElement? ChooseLanguage => ReusableMethods.FindElement(By.Id(""), "ChooseLanguage");
+        public IWebElement? ApplyLanguage => ReusableMethods.FindElement(By.Id(""), "ApplyLanguage");
+        public IWebElement? RateUs => ReusableMethods.FindElement(By.Id(""), "RateUs");
+        public IWebElement? MoreApps => ReusableMethods.FindElement(By.Id(""), "MoreApps");
+        public IWebElement? PrivacySettings => ReusableMethods.FindElement(By.Id(""), "PrivacySettings");
+        public IWebElement? ReadPrivacyPolicyHere => ReusableMethods.FindElement(By.Id(""), "ReadPrivacyPolicyHere");
+        public IWebElement? ExitApp => ReusableMethods.FindElement(By.Id(""), "ExitApp");
+        public IWebElement? ExitAppYes => ReusableMethods.FindElement(By.Id(""), "ExitAppYes");
+        public IWebElement? ExitAppNo => ReusableMethods.FindElement(By.Id(""), "ExitAppNo");
+        // public IWebElement? MapTools => ReusableMethods.FindElement(By.AccessibilityId("Map tools"), "MapTools");
 
-        IWebElement SatelliteMapMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView");
+        public IWebElement? SearchText => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search_for_traffic"), "SearchText");
+        public IWebElement? SearchButton => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search_bt"), "SearchButton");
 
-        IWebElement RouteFinderMenu => driver.FindElementByXPath("//android.widget.TextView[@text=\"Route Finder\"]");
-        IWebElement AddressFinderMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView14");
+        public IWebElement? MapStyleButton => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/fab"), "MapStyleButton");
+        public IWebElement? SatelliteMapview => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_sat"), "SatelliteMapview");
 
-        IWebElement NearbyPlacesMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView15");
-        IWebElement TrafficMapMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/trafficMapBtn");
-        IWebElement ParkingSpotMenu => driver.FindElementById("");
-        IWebElement MyLocationMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView17");
-        IWebElement GPSCameraMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView18");
-        IWebElement StreetViewmenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView19");
-        IWebElement FamousPlacesMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView14");
-        IWebElement MeasureAreamenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView25");
-        IWebElement SolarInfoMenu => driver.FindElementById("");
-        IWebElement CurrencyConverterMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView21");
-        IWebElement DailyLiveWeatherMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView22");
-        IWebElement LanguagetranslatorMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView20");
-        IWebElement CompassMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView24");
-        IWebElement SpeedoMeterMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView23");
-        IWebElement CountryInfoMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView26");
-        IWebElement Premium => driver.FindElementById("");
-        IWebElement Menu => driver.FindElementById("");
-        IWebElement ChooseLanguage => driver.FindElementById("");
-        IWebElement ApplyLanguage => driver.FindElementById("");
-        IWebElement RateUs => driver.FindElementById("");
-        IWebElement MoreApps => driver.FindElementById("");
-        IWebElement PrivacySettings => driver.FindElementById("");
-        IWebElement ReadPrivacyPolicyHere => driver.FindElementById("");
-        IWebElement ExitApp => driver.FindElementById("");
-        IWebElement ExitAppYes => driver.FindElementById("");
-        IWebElement ExitAppNo => driver.FindElementById("");
-        IWebElement MapTools => driver.FindElementByAccessibilityId("Map tools");
+        public IWebElement? TerrainMap => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_terrain"), "TerrainMap");
+        public IWebElement? TypicalMapView => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_typical"), "TypicalMapView");
 
-        IWebElement SearchText => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search_for_traffic");
-        IWebElement SearchButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search_bt");
+        public IWebElement? CurrentLocationButton => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/location_btn"), "CurrentLocationButton");
 
-        IWebElement MapStyleButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/fab");
-        IWebElement SatelliteMapview => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_sat");
+        public IWebElement? ClearTextSearch => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/clear_bt"), "ClearTextSearch");
 
-        IWebElement TerrainMap => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_terrain");
-        IWebElement TypicalMapView => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/image_typical");
+        public IWebElement? School => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"School\"]"), "School");
 
-        IWebElement CurrentLocationButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/location_btn");
-
-        IWebElement ClearTextSearch => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/clear_bt");
-
-        public IWebElement BackButton => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/backButton");
-
-
-        [Obsolete]
-        private void Back()
-        {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-            var element = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//android.widget.Button[@content-desc=\"Back\"]/android.widget.ImageView")));
-            element.Click();
-        }
-
-        public IWebElement School => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"School\"]");
 
     }
 }

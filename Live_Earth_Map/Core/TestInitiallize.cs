@@ -1,4 +1,6 @@
 ﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -9,17 +11,26 @@ namespace Live_Earth_Map.Core
     public class TestInitiallize
     {
         public AndroidDriver<AndroidElement> driver;
-        public ExtentReports Extent;
+        public static ExtentReports Extent;
+        private static ExtentSparkReporter _reporter;
 
-
-        public TestInitiallize()
+        //public TestInitiallize()
+        //{
+        //    string reportPath = @"D:\Reports\LiveEarthMapDdefectReport.html";  
+        //    _reporter = new ExtentSparkReporter(reportPath);
+        //    Extent = new ExtentReports();
+        //    Extent.AttachReporter(_reporter);
+        //}
+        //  Static constructor for initializing ExtentReports
+        static TestInitiallize()
         {
-            //    var ExtentSparkReports = new ExtentSparkReporter("D:\\");
+            string reportPath = @"D:\Reports\LiveEarthMapDdefectReport.html";
+            _reporter = new ExtentSparkReporter(reportPath);
             Extent = new ExtentReports();
-            // Extent.AttachReporter(ExtentSparkReports);
+            Extent.AttachReporter(_reporter);
         }
 
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
             try
@@ -43,7 +54,7 @@ namespace Live_Earth_Map.Core
             }
         }
 
-        [TestCleanup]
+        [TearDown]
         public void CleanUp()
         {
             try

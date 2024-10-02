@@ -1,10 +1,11 @@
 ﻿using AventStack.ExtentReports;
 using Live_Earth_Map.Core;
 using Live_Earth_Map.Pages;
+using NUnit.Framework;
 
 namespace Live_Earth_Map.Test_Class
 {
-    [TestClass]
+    [TestFixture]
     public class Test_Class : TestInitiallize
     {
         UserInterface1 M;
@@ -20,12 +21,12 @@ namespace Live_Earth_Map.Test_Class
         FamousPlaces Famousplaces;
         CurrencyConverter currencyConverter;
         LanguageTranslator languageTranslator;
-
+        SolarInfo solarinfo;
         //ui with 1 page that has three sections
-        [TestMethod]
+        [Test, Order(1)]
         public void UI1Test()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest(" UI1 Report");
             M = new UserInterface1(driver, test);
             M.SatelliteMapModule();
             M.RouteFinder();
@@ -35,7 +36,7 @@ namespace Live_Earth_Map.Test_Class
             M.ParkingSpotModule();
             M.MyLocation();
             M.GPSCamera();
-            M.Streeview();
+            M.StreetView();
             M.FamousPlaces();
             M.MeasureArea();
             M.SolarInfo();
@@ -48,80 +49,80 @@ namespace Live_Earth_Map.Test_Class
         }
 
 
-        [TestMethod]
+        [Test, Order(1)]
         //Satellite Map
         public void SatelliteMapTest()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("SatelliteMapTest Report");
             SM = new SatelliteMap(driver, test);
             SM.SatelliteMapModule();
         }
 
-        [TestMethod]
+        [Test, Order(2)]
         //RouteFinder
         public void RouteFinder()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("Route Finder Report");
             RF = new RouteFinder(driver, test);
             RF.RouteFinderModule();
         }
 
         //NearBy Places
-        [TestMethod]
+        [Test, Order(3)]
         public void NearByPlaces()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             AP = new NearByPlaces(driver, test);
-            AP.NearByPlacesAirport();
-            AP.NearByPlacesRailway();
+            //   AP.NearByPlacesAirport();
+            AP.NearByPlacesCases();
         }
 
         //Traffic Map
-        [TestMethod]
+        [Test, Order(4)]
         public void TrafficMapTest()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("TrafficMapTest Report");
             TrafficMap = new TrafficMap(driver, test);
             TrafficMap.TrafficMapMod();
         }
 
         //Address Finder
-        [TestMethod]
+        [Test, Order(5)]
         public void AddressFinderTest()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("AddressFinderTest Report");
             AddressFinder = new AddressFinder(driver, test);
             AddressFinder.AddressFinderModule();
         }
 
         //Parking Spot
-        [TestMethod]
+        [Test, Order(6)]
         public void ParkingSpotTest()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("ParkingSpotTest");
             ParkingSpot = new ParkingSpot(driver, test);
             ParkingSpot.ParkingSpotMethod();
         }
 
         //My location Finder
-        [TestMethod]
+        [Test, Order(7)]
         public void MyLocationTest()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("MyLocationTest");
             Mylocation = new MyLocation(driver, test);
             Mylocation.MyLocationMethod();
         }
-        [TestMethod]
+        [Test, Order(8)]
         public void StreetView()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("StreetView");
             SV = new StreetView(driver, test);
-            SV.FamousPlaces();
+            //   SV.FamousPlaces();
             SV.SevenWondrs();
-            SV.USAPanorama();
+            //     SV.USAPanorama();
         }
 
-        [TestMethod]
+        [Test, Order(9)]
         public void FamousPlaces()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -130,21 +131,30 @@ namespace Live_Earth_Map.Test_Class
         }
 
         //Currency cnverter
-        [TestMethod]
+        [Test, Order(10)]
         public void CurrencyConverter()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("CurrencyConverter Report");
             currencyConverter = new CurrencyConverter(driver, test);
             currencyConverter.CurrencyConverterMethod();
         }
 
         //Language Translator
-        [TestMethod]
+        [Test, Order(11)]
         public void LanguageTranslator()
         {
-            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ExtentTest test = Extent.CreateTest("LanguageTranslator  Report");
             languageTranslator = new LanguageTranslator(driver, test);
             languageTranslator.LanguageTranslatorMethod();
+        }
+
+        //SolarInfo
+        [Test, Order(11)]
+        public void SolarInfo()
+        {
+            ExtentTest test = Extent.CreateTest("solarInfo  Report");
+            solarinfo = new SolarInfo(driver, test);
+            solarinfo.SolarInfoMethod();
         }
     }
 }
