@@ -25,7 +25,7 @@ namespace Live_Earth_Map.Pages
             ReusableMethods.ElementClick(RouteMyLoc, "Route My Location");
             RouteMyDestination?.SendKeys("Kahuta");
 
-            ReusableMethods.ElementClick(FindRouteBtn, "Find Route Button");
+            ReusableMethods.ClickwithAd(FindRouteBtn, "Find Route Button");
             Thread.Sleep(3000);
 
             ReusableMethods.ElementClick(MapStyleButton, "Map Style Button");
@@ -46,10 +46,21 @@ namespace Live_Earth_Map.Pages
             Thread.Sleep(5000);
 
             ReusableMethods.NavigateBack("Back  Nav issue");
+            //  ReusableMethods.ClickwithAd(NavigateBack(), "Navigate Back");
             ReusableMethods.NavigateBack("Back  Nav issue");
+
+            ReusableMethods.InterAdHandle();
         }
 
         // Elements
+        //   ReusableMethods.NavigateBack("Back to Previous Screen");
+
+        // Elements
+        public IWebElement? NavigateBack()
+        {
+            driver?.Navigate().Back();
+            return null;
+        }
         public IWebElement? RouteMyLoc => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/my_address_bt"), "RouteMyLoc");
         public IWebElement? RouteMyDestination => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/destination_search"), "RouteMyDestination");
         public IWebElement? StartNavigation => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search"), "StartNavigation");

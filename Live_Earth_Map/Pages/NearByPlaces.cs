@@ -19,7 +19,10 @@ namespace Live_Earth_Map.Pages
 
         public void NearByPlacesCases()
         {
-            ReusableMethods.ClickwithAdPlacesAndNavigateBack(NearByPlacesMenu, "Nearby Places Menu");
+            //     NearByPlacesMenu.Click();
+            //    ReusableMethods.InterAdHandle();
+            Thread.Sleep(3000);
+            ReusableMethods.ClickwithAd(NearByPlacesMenu, "Nearby Places Menu");
 
             ReusableMethods.ClickwithAdPlacesAndNavigateBack(Airport, "Airport");
 
@@ -107,14 +110,15 @@ namespace Live_Earth_Map.Pages
             ReusableMethods.ScrollToElementByText("Zoo");
             ReusableMethods.ClickwithAdPlacesAndNavigateBack(Zoo, "Zoo");
 
-
+            ReusableMethods.NavigateBack("Back  Nav issue");
+            ReusableMethods.InterAdHandle();
         }
 
         // Elements
         //        IWebElement NearbyPlacesMenu => driver.FindElementById("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/nearbyPlacesBtn");
         //android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Airport\"]
-        public IWebElement? NearByPlacesMenu => ReusableMethods.FindElement(By.XPath("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/nearbyPlacesBtn"), "Menu");
-        public IWebElement? Airport => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\\\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\\\" and @text=\\\"Airport\\\"]\r\n"), "Airport");
+        public IWebElement? NearByPlacesMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/nearbyPlacesBtn"), "Menu");
+        public IWebElement? Airport => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Airport\"]"), "Airport");
 
         public IWebElement? RailwayStation => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Railway Station\"]"), "RailwayStation");
         public IWebElement? BusStation => ReusableMethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/famous_place_tv\" and @text=\"Bus Station\"]"), "BusStation");

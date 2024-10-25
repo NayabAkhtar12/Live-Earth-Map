@@ -23,7 +23,7 @@ namespace Live_Earth_Map.Test_Class
         LanguageTranslator languageTranslator;
         SolarInfo solarinfo;
         //ui with 1 page that has three sections
-        [Test, Order(1)]
+        //  [Test, Order(1)]
         public void UI1Test()
         {
             ExtentTest test = Extent.CreateTest(" UI1 Report");

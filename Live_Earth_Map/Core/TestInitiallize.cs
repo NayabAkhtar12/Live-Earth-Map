@@ -10,7 +10,7 @@ namespace Live_Earth_Map.Core
 {
     public class TestInitiallize
     {
-        public AndroidDriver<AndroidElement> driver;
+        public AndroidDriver<AndroidElement>? driver;
         public static ExtentReports Extent;
         private static ExtentSparkReporter _reporter;
 

@@ -133,17 +133,24 @@ namespace Live_Earth_Map.Pages
         //New method for live ads
         public void InterAdHandle()
         {
-            //   Thread.Sleep(12000);
+            Thread.Sleep(2000);
+
             try
             {
+
                 By handleAdButton = By.XPath(
-            "//android.widget.Button | " +
-            "//android.widget.TextView[@text=\"Close\"] |" +
-            "//android.widget.ImageView[@content-desc='Ad closed'] | " +
-            "//android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ']" +
-            "//android.view.View[@resource-id=\"mys-content\"]/android.view.View[2]/android.widget.TextView" +
-            "//android.widget.TextView[@text=\"CLOSE\"]"
+"//android.widget.Button | " +
+"//android.view.View[@resource-id='mys-content']/android.view.View[2]/android.view.View[1]"
             );
+                //    By handleAdButton = By.XPath(
+                //"//android.widget.Button | " +
+                //"//android.widget.TextView[@text=\"Close\"] |" +
+                //"//android.widget.ImageView[@content-desc='Ad closed'] | " +
+                //"//android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ']" +
+                //"//android.view.View[@resource-id=\"mys-content\"]/android.view.View[2]/android.widget.TextView" +
+                //"//android.widget.TextView[@text=\"CLOSE\"]  | " +
+                //"//android.view.View[@resource-id=\"mys-content\"]/android.view.View[2]/android.view.View[1]"
+
 
                 // By closeButton = By.XPath("//android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ' ]");
                 // By crossButton = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed']");
@@ -232,6 +239,7 @@ namespace Live_Earth_Map.Pages
         }
         public void ClickwithAdPlacesAndNavigateBack(IWebElement? element, string elementName)
         {
+            Thread.Sleep(2000);
             try
             {
                 element?.Click();
@@ -280,6 +288,7 @@ namespace Live_Earth_Map.Pages
 
 
         }
+
         public void NavigateBack(string Action)
 
         {

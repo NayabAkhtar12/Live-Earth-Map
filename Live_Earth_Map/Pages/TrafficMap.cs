@@ -72,6 +72,9 @@ namespace Live_Earth_Map.Pages
             ReusableMethods.ElementClick(ClearTextSearch, "Clear Search Text - Scenario 2");
 
             ReusableMethods.NavigateBack("Back to Previous Screen");
+
+            // ReusableMethods.NavigateBack("Back  Nav issue");
+            ReusableMethods.InterAdHandle();
         }
 
 

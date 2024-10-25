@@ -72,10 +72,21 @@ namespace Live_Earth_Map.Pages
 
             ReusableMethods.ElementClick(ClearTextSearch, "Clear Search Text - Scenario 2");
 
-            ReusableMethods.NavigateBack("Back to Previous Screen");
+            // ReusableMethods.ClickwithAd(NavigateBack(), "Navigate Back");
+            //   ReusableMethods.NavigateBack("Back to Previous Screen");
+
+            ReusableMethods.NavigateBack("Back  Nav issue");
+            ReusableMethods.InterAdHandle();
+
         }
 
         // Elements
+        public IWebElement? NavigateBack()
+        {
+            driver?.Navigate().Back();
+            return null;
+        }
+        public IWebElement? Back => ReusableMethods.FindElement(By.Id(""), "Navigate Back");
         public IWebElement? SatelliteMapMenu => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/textView"), "SatelliteMapMenu");
         public IWebElement? SearchText => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/editText_address"), "SearchText");
         public IWebElement? SearchButton => ReusableMethods.FindElement(By.Id("com.satellitemap.voice.navigation.gps.locationfinder.driving.directions:id/search_item"), "SearchButton");

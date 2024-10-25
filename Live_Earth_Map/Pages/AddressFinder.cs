@@ -39,6 +39,8 @@ namespace Live_Earth_Map.Pages
 
             ReusableMethods.NavigateBack("Back  Nav issue");
             ReusableMethods.NavigateBack("Back  Nav issue");
+            //   ReusableMethods.NavigateBack("Back  Nav issue");
+            ReusableMethods.InterAdHandle();
         }
 
 

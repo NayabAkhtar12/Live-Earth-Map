@@ -45,6 +45,8 @@ namespace Live_Earth_Map.Pages
             ReusableMethods.ElementClick(TerrainMap, "Terrain Map");
             Thread.Sleep(2000);
             ReusableMethods.NavigateBack("Navigation Back from Terrain Map");
+            //    ReusableMethods.NavigateBack("Back  Nav issue");
+            ReusableMethods.InterAdHandle();
         }
 
 
